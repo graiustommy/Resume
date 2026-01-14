@@ -1,0 +1,708 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Резюме — Макарян Армен (Go разработчик)</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <style>
+            :root {
+                --bg-color: #f3f4f6;
+                --card-bg: #ffffff;
+                --accent: #0ea5e9;
+                --accent-soft: rgba(14, 165, 233, 0.06);
+                --text-main: #0f172a;
+                --text-muted: #6b7280;
+                --border-subtle: #e5e7eb;
+            }
+
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                font-family:
+                    system-ui,
+                    -apple-system,
+                    BlinkMacSystemFont,
+                    "Segoe UI",
+                    sans-serif;
+                background:
+                    radial-gradient(
+                        circle at top left,
+                        #e0f2fe 0,
+                        transparent 45%
+                    ),
+                    radial-gradient(
+                        circle at bottom right,
+                        #fee2e2 0,
+                        transparent 45%
+                    ),
+                    var(--bg-color);
+                color: var(--text-main);
+                line-height: 1.6;
+                padding: 24px 12px;
+            }
+
+            .page {
+                max-width: 960px;
+                margin: 0 auto;
+            }
+
+            .card {
+                background: var(--card-bg);
+                border-radius: 20px;
+                border: 1px solid var(--border-subtle);
+                box-shadow:
+                    0 22px 60px rgba(15, 23, 42, 0.1),
+                    0 0 0 1px rgba(255, 255, 255, 0.9);
+                padding: 28px 22px;
+            }
+
+            @media (min-width: 768px) {
+                body {
+                    padding: 40px 16px;
+                }
+                .card {
+                    padding: 36px 32px;
+                }
+            }
+
+            .header {
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+                margin-bottom: 28px;
+                border-bottom: 1px solid var(--border-subtle);
+                padding-bottom: 20px;
+            }
+
+            @media (min-width: 640px) {
+                .header {
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+            }
+
+            .title-block {
+                display: flex;
+                flex-direction: column;
+                gap: 6px;
+            }
+
+            .name {
+                font-size: clamp(1.8rem, 2.4vw, 2.2rem);
+                font-weight: 700;
+                letter-spacing: 0.04em;
+                color: #020617;
+            }
+
+            .position {
+                font-size: 0.98rem;
+                color: var(--accent);
+                text-transform: uppercase;
+                letter-spacing: 0.16em;
+            }
+
+            .tagline {
+                margin-top: 4px;
+                font-size: 0.96rem;
+                color: var(--text-muted);
+            }
+
+            .badge {
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+                font-size: 0.78rem;
+                color: var(--accent);
+                background: var(--accent-soft);
+                border-radius: 999px;
+                padding: 4px 10px;
+                border: 1px solid rgba(14, 165, 233, 0.4);
+            }
+
+            .dot {
+                width: 6px;
+                height: 6px;
+                border-radius: 999px;
+                background: #22c55e;
+                box-shadow: 0 0 10px rgba(34, 197, 94, 0.8);
+            }
+
+            .contact {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 6px;
+                font-size: 0.9rem;
+            }
+
+            @media (min-width: 480px) {
+                .contact {
+                    grid-template-columns: repeat(2, minmax(0, 1fr));
+                    column-gap: 18px;
+                }
+            }
+
+            .contact-item {
+                color: var(--text-main);
+            }
+
+            .contact-label {
+                color: var(--text-muted);
+                font-size: 0.8rem;
+                text-transform: uppercase;
+                letter-spacing: 0.14em;
+            }
+
+            .contact-value a {
+                color: #111827;
+                text-decoration: none;
+                border-bottom: 1px dashed rgba(148, 163, 184, 0.7);
+            }
+
+            .contact-value a:hover {
+                color: var(--accent);
+                border-color: var(--accent);
+            }
+
+            .grid {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+
+            @media (min-width: 900px) {
+                .grid {
+                    grid-template-columns: 1.1fr 0.9fr;
+                    column-gap: 32px;
+                    align-items: flex-start;
+                }
+            }
+
+            .section {
+                margin-top: 18px;
+            }
+
+            .section-title {
+                font-size: 0.9rem;
+                text-transform: uppercase;
+                color: var(--text-muted);
+                letter-spacing: 0.18em;
+                margin-bottom: 10px;
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+            }
+
+            .section-title::before {
+                content: "";
+                display: inline-block;
+                width: 24px;
+                height: 1px;
+                background: linear-gradient(
+                    to right,
+                    var(--accent),
+                    transparent
+                );
+            }
+
+            p {
+                font-size: 0.95rem;
+                color: var(--text-main);
+                margin-bottom: 8px;
+            }
+
+            .muted {
+                color: var(--text-muted);
+                font-size: 0.9rem;
+            }
+
+            .chip-row {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 6px;
+            }
+
+            .chip {
+                font-size: 0.78rem;
+                padding: 4px 9px;
+                border-radius: 999px;
+                background: #f9fafb;
+                border: 1px solid #e5e7eb;
+                color: #111827;
+                white-space: nowrap;
+            }
+
+            .chip.chip-accent {
+                border-color: rgba(14, 165, 233, 0.7);
+                background: var(--accent-soft);
+                color: #0369a1;
+            }
+
+            .block {
+                border-radius: 14px;
+                background: #f9fafb;
+                border: 1px solid #e5e7eb;
+                padding: 14px 14px 12px;
+                margin-bottom: 12px;
+            }
+
+            .block-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 6px;
+                gap: 10px;
+            }
+
+            .block-title {
+                font-size: 0.98rem;
+                font-weight: 600;
+                color: #111827;
+            }
+
+            .block-subtitle {
+                font-size: 0.85rem;
+                color: var(--accent);
+            }
+
+            .block-meta {
+                font-size: 0.8rem;
+                color: var(--text-muted);
+            }
+
+            .block-body ul {
+                list-style: none;
+                padding-left: 0;
+                margin-top: 4px;
+            }
+
+            .block-body li {
+                position: relative;
+                padding-left: 14px;
+                margin-bottom: 4px;
+                font-size: 0.9rem;
+                color: var(--text-main);
+            }
+
+            .block-body li::before {
+                content: "";
+                position: absolute;
+                left: 4px;
+                top: 0.6em;
+                width: 4px;
+                height: 4px;
+                border-radius: 999px;
+                background: var(--accent);
+            }
+
+            .pill {
+                display: inline-flex;
+                align-items: center;
+                padding: 2px 8px;
+                font-size: 0.78rem;
+                border-radius: 999px;
+                background: #eff6ff;
+                border: 1px solid #dbeafe;
+                color: #1e3a8a;
+            }
+
+            .pill strong {
+                color: #111827;
+                margin-right: 4px;
+            }
+
+            a {
+                color: var(--accent);
+            }
+
+            a:hover {
+                color: #0369a1;
+            }
+
+            .footer-note {
+                margin-top: 18px;
+                text-align: right;
+                font-size: 0.78rem;
+                color: var(--text-muted);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="page">
+            <div class="card">
+                <header class="header">
+                    <div class="title-block">
+                        <div class="badge">
+                            <span class="dot"></span>
+                            <span>Open to offers — Go backend</span>
+                        </div>
+                        <h1 class="name">Макарян Армен</h1>
+                        <div class="position">Go разработчик / Backend</div>
+                        <p class="tagline">
+                            Event‑driven сервисы, работа с данными, PostgreSQL,
+                            интеграции с внешними API и биллинг.
+                        </p>
+                    </div>
+
+                    <div class="contact">
+                        <div class="contact-item">
+                            <div class="contact-label">Email</div>
+                            <div class="contact-value">
+                                <a href="mailto:armenmakaryan213@gmail.com"
+                                    >armenmakaryan213@gmail.com</a
+                                >
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-label">Телефон</div>
+                            <div class="contact-value">
+                                <a href="tel:+79923489472">+7 992 348‑94‑72</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-label">Telegram</div>
+                            <div class="contact-value">
+                                <a
+                                    href="https://t.me/watashi_wa_kaizakou"
+                                    target="_blank"
+                                    >@watashi_wa_kaizakou</a
+                                >
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-label">Город</div>
+                            <div class="contact-value">Екатеринбург</div>
+                        </div>
+                    </div>
+                </header>
+
+                <div class="grid">
+                    <!-- Левая колонка -->
+                    <div>
+                        <section class="section">
+                            <h2 class="section-title">О себе</h2>
+                            <p>
+                                Backend‑разработчик с фокусом на Golang и работе
+                                с данными. Есть опыт построения сервисов,
+                                интегрирующихся с внешними API, решения задач
+                                асинхронного взаимодействия, авторизации и
+                                биллинга. Уверенно владею PostgreSQL и Linux,
+                                активно прокачиваю алгоритмическое мышление
+                                (LeetCode). Особый интерес — event‑driven
+                                архитектуры и системы, основанные на сообщениях
+                                и событиях.
+                            </p>
+                        </section>
+
+                        <section class="section">
+                            <h2 class="section-title">Опыт</h2>
+
+                            <div class="block">
+                                <div class="block-header">
+                                    <div>
+                                        <div class="block-title">
+                                            Go Developer (backend)
+                                        </div>
+                                        <div class="block-subtitle">
+                                            Стартап VPN‑сервиса на основе
+                                            Telegram‑бота
+                                        </div>
+                                    </div>
+                                    <div class="block-meta">2024 — н.в.</div>
+                                </div>
+                                <div class="block-body">
+                                    <p class="muted">
+                                        Разработка backend‑части сервиса
+                                        VPN‑подписок, управляемого через
+                                        Telegram‑бота: покупка, продление и
+                                        управление доступом к VPN, интеграция с
+                                        Hysteria2 и платёжной системой ЮKassa.
+                                    </p>
+                                    <ul>
+                                        <li>
+                                            Проектирование и разработка
+                                            REST‑сервисов на Golang для
+                                            управления пользователями и
+                                            подписками.
+                                        </li>
+                                        <li>
+                                            Реализация бизнес‑логики биллинга,
+                                            статусов подписок и проверки прав
+                                            доступа.
+                                        </li>
+                                        <li>
+                                            Интеграция с
+                                            <strong>Hysteria2 API</strong>:
+                                            выдача и отзыв конфигураций, учёт
+                                            статусов соединений и параметров
+                                            трафика.
+                                        </li>
+                                        <li>
+                                            Разработка логики Telegram‑бота:
+                                            регистрация, покупка, продление,
+                                            пауза подписки, обработка состояний
+                                            диалога.
+                                        </li>
+                                        <li>
+                                            Интеграция с платёжной системой
+                                            <strong>ЮKassa</strong>: создание
+                                            платежей и подписок, обработка
+                                            вебхуков, защита от повторной
+                                            обработки.
+                                        </li>
+                                        <li>
+                                            Проектирование схем БД в
+                                            <strong>PostgreSQL</strong>
+                                            (пользователи, подписки, платежи,
+                                            сессии, журналы событий) и
+                                            оптимизация запросов.
+                                        </li>
+                                        <li>
+                                            Асинхронная обработка событий:
+                                            очереди задач, повторные попытки,
+                                            логирование бизнес‑событий.
+                                        </li>
+                                    </ul>
+                                    <div
+                                        class="chip-row"
+                                        style="margin-top: 4px"
+                                    >
+                                        <span class="chip chip-accent"
+                                            >Golang</span
+                                        >
+                                        <span class="chip">PostgreSQL</span>
+                                        <span class="chip"
+                                            >Telegram Bot API</span
+                                        >
+                                        <span class="chip">Hysteria2 API</span>
+                                        <span class="chip">ЮKassa</span>
+                                        <span class="chip">Docker</span>
+                                        <span class="chip">Linux</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="block">
+                                <div class="block-header">
+                                    <div>
+                                        <div class="block-title">
+                                            Инструмент парсинга веб‑страниц
+                                        </div>
+                                        <div class="block-subtitle">
+                                            Pet‑проект на Golang
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="block-body">
+                                    <ul>
+                                        <li>
+                                            Консольный инструмент для извлечения
+                                            и агрегации данных с веб‑страниц.
+                                        </li>
+                                        <li>
+                                            Поддержка текстового контента и
+                                            структурированных данных (новости,
+                                            товары, статьи).
+                                        </li>
+                                        <li>
+                                            Сохранение результатов в JSON и CSV,
+                                            обработка сетевых ошибок.
+                                        </li>
+                                    </ul>
+                                    <div
+                                        class="chip-row"
+                                        style="margin-top: 4px"
+                                    >
+                                        <span class="chip chip-accent"
+                                            >Golang</span
+                                        >
+                                        <span class="chip">HTTP client</span>
+                                        <span class="chip">HTML parsing</span>
+                                        <span class="chip">JSON / CSV</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="block">
+                                <div class="block-header">
+                                    <div>
+                                        <div class="block-title">
+                                            Плагин «drugtimer» для GTA:SAMP
+                                        </div>
+                                        <div class="block-subtitle">
+                                            C++ / sampfuncs
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="block-body">
+                                    <ul>
+                                        <li>
+                                            Реализовал C++‑плагин, расширяющий
+                                            функциональность клиента.
+                                        </li>
+                                        <li>
+                                            Работа с хуками, низкоуровневым API
+                                            и управлением памятью.
+                                        </li>
+                                        <li>
+                                            Опыт, полезный для понимания
+                                            производительности и внутреннего
+                                            устройства систем.
+                                        </li>
+                                    </ul>
+                                    <div
+                                        class="chip-row"
+                                        style="margin-top: 4px"
+                                    >
+                                        <span class="chip chip-accent"
+                                            >C++</span
+                                        >
+                                        <span class="chip">sampfuncs</span>
+                                        <span class="chip">Low‑level API</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+
+                    <!-- Правая колонка -->
+                    <div>
+                        <section class="section">
+                            <h2 class="section-title">Ключевые навыки</h2>
+                            <div class="block">
+                                <div class="block-body">
+                                    <p class="muted">Языки и технологии</p>
+                                    <div
+                                        class="chip-row"
+                                        style="
+                                            margin-bottom: 6px;
+                                            margin-top: 4px;
+                                        "
+                                    >
+                                        <span class="chip chip-accent"
+                                            >Golang</span
+                                        >
+                                        <span class="chip">C++</span>
+                                        <span class="chip">PostgreSQL</span>
+                                        <span class="chip">REST / HTTP</span>
+                                        <span class="chip">JSON</span>
+                                        <span class="chip">Docker</span>
+                                        <span class="chip">Linux</span>
+                                    </div>
+                                    <p class="muted">Архитектура и подходы</p>
+                                    <div class="chip-row">
+                                        <span class="chip"
+                                            >Асинхронность / goroutines</span
+                                        >
+                                        <span class="chip">SOLID</span>
+                                        <span class="chip">DRY</span>
+                                        <span class="chip">KISS</span>
+                                        <span class="chip"
+                                            >Event‑driven подход</span
+                                        >
+                                        <span class="chip"
+                                            >Микросервисы (понимание)</span
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="section">
+                            <h2 class="section-title">Образование</h2>
+                            <div class="block">
+                                <div class="block-header">
+                                    <div>
+                                        <div class="block-title">
+                                            УрФУ, ИРИТ‑РТФ
+                                        </div>
+                                        <div class="block-subtitle">
+                                            Бакалавриат, ИТ‑направление
+                                        </div>
+                                    </div>
+                                    <div class="block-meta">
+                                        2024 — 2028 (обучаюсь)
+                                    </div>
+                                </div>
+                                <div class="block-body">
+                                    <p>
+                                        Самостоятельно изучаю Golang, C++ и
+                                        PostgreSQL, что помогает глубже понимать
+                                        университетскую программу. Активно
+                                        практикуюсь в алгоритмах и структурах
+                                        данных (в т.ч. на LeetCode), использую
+                                        Linux как основную среду разработки.
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="section">
+                            <h2 class="section-title">Языки</h2>
+                            <div class="block">
+                                <div class="block-body">
+                                    <p>
+                                        <span class="pill"
+                                            ><strong>Русский</strong>—
+                                            родной</span
+                                        >
+                                    </p>
+                                    <p>
+                                        <span class="pill"
+                                            ><strong>Английский</strong>— чтение
+                                            документации, техническая
+                                            переписка</span
+                                        >
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="section">
+                            <h2 class="section-title">
+                                Фокус под вакансию SpectrumData
+                            </h2>
+                            <div class="block">
+                                <div class="block-body">
+                                    <ul>
+                                        <li>
+                                            Разработка бизнес‑логики на Go и
+                                            построение веб‑сервисов (HTTP/REST).
+                                        </li>
+                                        <li>
+                                            Понимание event‑driven систем,
+                                            очередей задач, обработки событий и
+                                            вебхуков.
+                                        </li>
+                                        <li>
+                                            Уверенная работа с PostgreSQL и
+                                            SQL‑запросами.
+                                        </li>
+                                        <li>
+                                            Интеграция с внешними API (VPN,
+                                            платежи, Telegram, биллинг).
+                                        </li>
+                                        <li>
+                                            Готовность осваивать стек компании:
+                                            брокеры сообщений, gRPC, хранилища
+                                            данных.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+
+                <div class="footer-note">
+                    Обновлено специально под позицию Go разработчика
+                    (event‑driven / работа с данными).
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
