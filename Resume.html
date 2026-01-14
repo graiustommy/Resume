@@ -1,0 +1,713 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Resume</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="2e848c5f-92eb-8003-8100-f62ce8789bd0" class="page sans"><header><h1 class="page-title" dir="auto">Resume</h1><p class="page-description" dir="auto"></p></header><div class="page-body"><div style="display:contents" dir="auto"><h1 id="2e848c5f-92eb-80bd-ac7e-e6fc5136a25a" class="">Макарян Армен</h1></div><div style="display:contents" dir="auto"><h3 id="2e848c5f-92eb-807c-926e-e242f1244690" class="">Контактная информация</h3></div><div style="display:contents" dir="auto"><ul id="2e848c5f-92eb-808c-9750-ef827ac669a7" class="bulleted-list"><li style="list-style-type:disc"><strong>Email:</strong> <a href="mailto:armenmakaryan213@gmail.com">armenmakaryan213@gmail.com</a>  </li></ul></div><div style="display:contents" dir="auto"><ul id="2e848c5f-92eb-808b-8a45-ed563a1f0630" class="bulleted-list"><li style="list-style-type:disc"><strong>Телефон:</strong> 8 992 348‑94‑72  </li></ul></div><div style="display:contents" dir="auto"><ul id="2e848c5f-92eb-80a2-ab89-d4c08327d419" class="bulleted-list"><li style="list-style-type:disc"><strong>Telegram:</strong> @watashi_wa_kaizakou  </li></ul></div><div style="display:contents" dir="auto"><ul id="2e848c5f-92eb-80f3-8667-c8537ff3ed8d" class="bulleted-list"><li style="list-style-type:disc"><strong>Город:</strong> Екатеринбург  </li></ul></div><div style="display:contents" dir="auto"><h3 id="2e848c5f-92eb-8096-abd1-cd77d99a130a" class="">Желаемая позиция</h3></div><div style="display:contents" dir="auto"><p id="2e848c5f-92eb-80de-a0e7-d9f76e577ac8" class="">Go разработчик (Backend, event‑driven / микросервисы, данные и интеграции)</p></div><div style="display:contents" dir="auto"><hr id="2e848c5f-92eb-806e-9735-cad384c089d7"/></div><div style="display:contents" dir="auto"><h3 id="2e848c5f-92eb-80e6-a66c-cedb53687dfd" class="">О себе</h3></div><div style="display:contents" dir="auto"><p id="2e848c5f-92eb-801b-ba8f-c4143ed8dea6" class="">Backend‑разработчик с фокусом на Golang и работе с данными. Есть опыт разработки сервисов, интегрирующихся с внешними API, решения задач асинхронного взаимодействия, авторизации и биллинга. Уверенно владею PostgreSQL, хорошо чувствую себя в Linux‑окружении, активно прокачиваю алгоритмическое мышление (LeetCode). Интересуюсь event‑driven архитектурами и системами, основанными на сообщениях и событиях.</p></div><div style="display:contents" dir="auto"><hr id="2e848c5f-92eb-8000-abd2-ed3d8d240679"/></div><div style="display:contents" dir="auto"><h3 id="2e848c5f-92eb-80fd-9d8c-c28f6c35fd47" class="">Ключевые навыки</h3></div><div style="display:contents" dir="auto"><p id="2e848c5f-92eb-8013-9a8c-dda2694b519e" class=""><strong>Языки и технологии</strong></p></div><div style="display:contents" dir="auto"><ul id="2e848c5f-92eb-8016-bd9d-f86ad32cb42d" class="bulleted-list"><li style="list-style-type:disc"><strong>Golang</strong>: net/http, работа с JSON, goroutines и channels, middleware  </li></ul></div><div style="display:contents" dir="auto"><ul id="2e848c5f-92eb-808e-ac9c-ea7390dc29d6" class="bulleted-list"><li style="list-style-type:disc"><strong>C++</strong>: плагины и низкоуровневая логика  </li></ul></div><div style="display:contents" dir="auto"><ul id="2e848c5f-92eb-8073-8717-ebd05f3e1df4" class="bulleted-list"><li style="list-style-type:disc"><strong>PostgreSQL</strong>: проектирование схем, индексы, сложные запросы  </li></ul></div><div style="display:contents" dir="auto"><ul id="2e848c5f-92eb-80cb-b87d-cce80dda4cc2" class="bulleted-list"><li style="list-style-type:disc"><strong>HTTP/REST</strong>: разработка и интеграция веб‑сервисов  </li></ul></div><div style="display:contents" dir="auto"><ul id="2e848c5f-92eb-80b9-9342-f1cf83eba3da" class="bulleted-list"><li style="list-style-type:disc"><strong>Работа с API</strong>: Telegram Bot API, Hysteria2 API, платёжные API (ЮKassa)  </li></ul></div><div style="display:contents" dir="auto"><ul id="2e848c5f-92eb-80e6-8d3e-cd68940bcb02" class="bulleted-list"><li style="list-style-type:disc">Базовый опыт контейнеризации в <strong>Docker</strong></li></ul></div><div style="display:contents" dir="auto"><p id="2e848c5f-92eb-80b2-ae27-cb8b4092912d" class=""><strong>Архитектура и подходы</strong></p></div><div style="display:contents" dir="auto"><ul id="2e848c5f-92eb-8055-9c3d-dc0bece2a13f" class="bulleted-list"><li style="list-style-type:disc">Асинхронное и параллельное программирование (goroutines, каналы, неблокирующие операции)  </li></ul></div><div style="display:contents" dir="auto"><ul id="2e848c5f-92eb-80c4-b9d1-e3eb479562b7" class="bulleted-list"><li style="list-style-type:disc">Понимание принципов <strong>SOLID</strong>, <strong>DRY</strong>, <strong>KISS</strong>  </li></ul></div><div style="display:contents" dir="auto"><ul id="2e848c5f-92eb-805a-a838-cf8321ed5eb6" class="bulleted-list"><li style="list-style-type:disc">Понимание микросервисного подхода и обмена данными через события / сообщения  </li></ul></div><div style="display:contents" dir="auto"><ul id="2e848c5f-92eb-805f-9f96-e6cd97b888d0" class="bulleted-list"><li style="list-style-type:disc">Проектирование и реализация бизнес‑логики в виде отдельных сервисов и модулей</li></ul></div><div style="display:contents" dir="auto"><p id="2e848c5f-92eb-8084-a2b7-fa149f1ef51f" class=""><strong>Качество кода</strong></p></div><div style="display:contents" dir="auto"><ul id="2e848c5f-92eb-8042-9f6b-fd0fefeb4f14" class="bulleted-list"><li style="list-style-type:disc">Модульное тестирование ключевой логики  </li></ul></div><div style="display:contents" dir="auto"><ul id="2e848c5f-92eb-801d-8bfd-c79b39f2e96f" class="bulleted-list"><li style="list-style-type:disc">Логирование, обработка ошибок, идемпотентность для внешних интеграций  </li></ul></div><div style="display:contents" dir="auto"><ul id="2e848c5f-92eb-8026-a871-c8eaa8283a8c" class="bulleted-list"><li style="list-style-type:disc">Работа с Git (branching, code review, pull requests)</li></ul></div><div style="display:contents" dir="auto"><hr id="2e848c5f-92eb-80d5-a5ff-fda329068650"/></div><div style="display:contents" dir="auto"><h3 id="2e848c5f-92eb-808c-9d63-da05296f3e4a" class="">Опыт</h3></div><div style="display:contents" dir="auto"><h4 id="2e848c5f-92eb-8029-959f-fe6de1b6ad75" class="">Go Developer (backend)</h4></div><div style="display:contents" dir="auto"><p id="2e848c5f-92eb-8084-a426-e64990e89979" class=""><strong>Стартап VPN‑сервиса на основе Telegram‑бота</strong>  </p></div><div style="display:contents" dir="auto"><p id="2e848c5f-92eb-803d-b47c-c654d949e4c9" class=""><em>2024 – н.в.</em></p></div><div style="display:contents" dir="auto"><p id="2e848c5f-92eb-80f2-8385-eb331ae053aa" class="">Разработка backend‑части сервиса VPN‑подписок, управляемого через Telegram‑бота. Сервис обеспечивает покупку, продление и управление доступом к VPN, взаимодействует с несколькими внешними системами и API.</p></div><div style="display:contents" dir="auto"><p id="2e848c5f-92eb-80ad-987c-e961e85de9a7" class=""><strong>Основные задачи:</strong></p></div><div style="display:contents" dir="auto"><ul id="2e848c5f-92eb-8078-9b98-e56345fefe9e" class="bulleted-list"><li style="list-style-type:disc">Проектирование и разработка веб‑сервисов на <strong>Golang</strong>:<div style="display:contents" dir="auto"><ul id="2e848c5f-92eb-8019-94e3-ee1d2927ffde" class="bulleted-list"><li style="list-style-type:circle">реализация REST‑эндпоинтов для управления пользователями и подписками  </li></ul></div><div style="display:contents" dir="auto"><ul id="2e848c5f-92eb-80f0-8a53-d7c8a1fed1b3" class="bulleted-list"><li style="list-style-type:circle">авторизация и проверка прав доступа  </li></ul></div><div style="display:contents" dir="auto"><ul id="2e848c5f-92eb-8088-8fe4-cf6396e309d9" class="bulleted-list"><li style="list-style-type:circle">внутренняя бизнес‑логика биллинга и статусов подписок</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><ul id="2e848c5f-92eb-802b-a1a1-d3fef8cffac8" class="bulleted-list"><li style="list-style-type:disc">Интеграция с <strong>Hysteria2 API</strong>:<div style="display:contents" dir="auto"><ul id="2e848c5f-92eb-80ee-a115-c4c917018792" class="bulleted-list"><li style="list-style-type:circle">выдача и отзыв конфигураций для пользователей  </li></ul></div><div style="display:contents" dir="auto"><ul id="2e848c5f-92eb-809a-b779-c40f11624e33" class="bulleted-list"><li style="list-style-type:circle">учёт статусов соединений и параметров трафика  </li></ul></div><div style="display:contents" dir="auto"><ul id="2e848c5f-92eb-80a6-b54e-f00515bb70e0" class="bulleted-list"><li style="list-style-type:circle">реализация асинхронной обработки событий от VPN‑инфраструктуры</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><ul id="2e848c5f-92eb-803c-bf83-e35c73544cae" class="bulleted-list"><li style="list-style-type:disc">Разработка и интеграция <strong>Telegram‑бота</strong>:<div style="display:contents" dir="auto"><ul id="2e848c5f-92eb-801d-912c-f9c259a90c13" class="bulleted-list"><li style="list-style-type:circle">команды регистрации, покупки, продления, паузы подписки  </li></ul></div><div style="display:contents" dir="auto"><ul id="2e848c5f-92eb-8050-a142-e11011bb9754" class="bulleted-list"><li style="list-style-type:circle">обработка пользовательских запросов и состояний диалога</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><ul id="2e848c5f-92eb-8040-8893-f77ba8403a6d" class="bulleted-list"><li style="list-style-type:disc">Интеграция с платёжной системой <strong>ЮKassa</strong>:<div style="display:contents" dir="auto"><ul id="2e848c5f-92eb-8079-9439-c7329c991303" class="bulleted-list"><li style="list-style-type:circle">создание платежей и подписок  </li></ul></div><div style="display:contents" dir="auto"><ul id="2e848c5f-92eb-80f5-a624-eb66c4cc8895" class="bulleted-list"><li style="list-style-type:circle">обработка вебхуков, обновление статусов оплат, защита от повторной обработки  </li></ul></div><div style="display:contents" dir="auto"><ul id="2e848c5f-92eb-8039-84c6-dc86df0de60b" class="bulleted-list"><li style="list-style-type:circle">корректная обработка ошибок и временной недоступности платёжного сервиса</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><ul id="2e848c5f-92eb-809c-937c-eb2dc86df0e0" class="bulleted-list"><li style="list-style-type:disc">Работа с <strong>PostgreSQL</strong>:<div style="display:contents" dir="auto"><ul id="2e848c5f-92eb-803d-8aa2-fe98d31eea80" class="bulleted-list"><li style="list-style-type:circle">проектирование схем БД (пользователи, подписки, платежи, сессии, журналы событий)  </li></ul></div><div style="display:contents" dir="auto"><ul id="2e848c5f-92eb-8028-80ca-ce6bca003f2e" class="bulleted-list"><li style="list-style-type:circle">написание запросов с учётом нагрузок и индексации  </li></ul></div><div style="display:contents" dir="auto"><ul id="2e848c5f-92eb-8022-9f7f-c1dc703777d5" class="bulleted-list"><li style="list-style-type:circle">миграции и эволюция схемы</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><ul id="2e848c5f-92eb-8062-964b-ed2363380ef0" class="bulleted-list"><li style="list-style-type:disc">Асинхронная обработка событий:<div style="display:contents" dir="auto"><ul id="2e848c5f-92eb-80b9-8fa7-fb1745dec34a" class="bulleted-list"><li style="list-style-type:circle">очередь задач для обработки платежей и обновления статусов  </li></ul></div><div style="display:contents" dir="auto"><ul id="2e848c5f-92eb-805e-88be-daf5ca565032" class="bulleted-list"><li style="list-style-type:circle">отложенные и повторные попытки при ошибках внешних сервисов  </li></ul></div><div style="display:contents" dir="auto"><ul id="2e848c5f-92eb-8069-8205-c810efd41b77" class="bulleted-list"><li style="list-style-type:circle">логирование бизнес‑событий для последующего анализа</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><p id="2e848c5f-92eb-80a8-afd9-cb3ac88e4b34" class=""><strong>Технологии:</strong> Golang, PostgreSQL, Telegram Bot API, Hysteria2 API, ЮKassa, Docker, Linux, Git</p></div><div style="display:contents" dir="auto"><hr id="2e848c5f-92eb-80f3-9fcd-e6cd4a2e423f"/></div><div style="display:contents" dir="auto"><h3 id="2e848c5f-92eb-80b9-b2ab-eed53aa03153" class="">Другие проекты</h3></div><div style="display:contents" dir="auto"><p id="2e848c5f-92eb-80bb-95ab-d0260252dd85" class=""><strong>Инструмент парсинга веб‑страниц на Golang</strong>  </p></div><div style="display:contents" dir="auto"><ul id="2e848c5f-92eb-8054-9e4e-ea6baaca2567" class="bulleted-list"><li style="list-style-type:disc">Разработал утилиту для извлечения и агрегации данных с веб‑страниц.  </li></ul></div><div style="display:contents" dir="auto"><ul id="2e848c5f-92eb-80e5-9288-ec302331cbf8" class="bulleted-list"><li style="list-style-type:disc">Возможности:<div style="display:contents" dir="auto"><ul id="2e848c5f-92eb-80e8-83a3-dfd9dd8a1032" class="bulleted-list"><li style="list-style-type:circle">извлечение текстового контента и структурированных данных (новости, товары, статьи)  </li></ul></div><div style="display:contents" dir="auto"><ul id="2e848c5f-92eb-8085-98d8-d689b6847fad" class="bulleted-list"><li style="list-style-type:circle">анализ HTML‑разметки  </li></ul></div><div style="display:contents" dir="auto"><ul id="2e848c5f-92eb-800c-94d5-d5b2282af969" class="bulleted-list"><li style="list-style-type:circle">сохранение в форматах <strong>JSON</strong> и <strong>CSV</strong>  </li></ul></div></li></ul></div><div style="display:contents" dir="auto"><ul id="2e848c5f-92eb-809f-93c8-c67554f9dd12" class="bulleted-list"><li style="list-style-type:disc">Реализовал устойчивость к сетевым ошибкам и базовую конфигурацию источников.  </li></ul></div><div style="display:contents" dir="auto"><ul id="2e848c5f-92eb-80d6-8c68-cf1af1ade03c" class="bulleted-list"><li style="list-style-type:disc">Проект развивал навыки работы с HTTP‑клиентом, обработкой ответов и структурированием данных.</li></ul></div><div style="display:contents" dir="auto"><p id="2e848c5f-92eb-801a-b740-eb1b9ad89f74" class=""><strong>Плагин &quot;drugtimer&quot; для GTA:SAMP (C++, sampfuncs)</strong>  </p></div><div style="display:contents" dir="auto"><ul id="2e848c5f-92eb-80a8-b3e1-f0634e279161" class="bulleted-list"><li style="list-style-type:disc">Реализовал C++‑плагин, расширяющий функциональность клиента.  </li></ul></div><div style="display:contents" dir="auto"><ul id="2e848c5f-92eb-8039-ba4e-fd23dfff08d5" class="bulleted-list"><li style="list-style-type:disc">Работал с низкоуровневым API, хуками и управлением памятью.  </li></ul></div><div style="display:contents" dir="auto"><ul id="2e848c5f-92eb-806d-acf1-cb03153ffd22" class="bulleted-list"><li style="list-style-type:disc">Опыт полезен для понимания внутренних механизмов, оптимизации и работы с производительностью.</li></ul></div><div style="display:contents" dir="auto"><hr id="2e848c5f-92eb-80cc-b851-e6df2771dfee"/></div><div style="display:contents" dir="auto"><h3 id="2e848c5f-92eb-8091-81a0-e4568abf5046" class="">Образование</h3></div><div style="display:contents" dir="auto"><p id="2e848c5f-92eb-8026-a9f0-cedcf0b30fa6" class=""><strong>Уральский федеральный университет (УрФУ), ИРИТ‑РТФ</strong>  </p></div><div style="display:contents" dir="auto"><p id="2e848c5f-92eb-8026-b595-d2c00bd53034" class="">Бакалавриат, направление в области информационных технологий  </p></div><div style="display:contents" dir="auto"><p id="2e848c5f-92eb-800e-9563-d642c4bc520d" class=""><em>сентябрь 2024 – 2028 (обучаюсь)</em></p></div><div style="display:contents" dir="auto"><ul id="2e848c5f-92eb-80ac-b1dc-d6cf22252559" class="bulleted-list"><li style="list-style-type:disc">Самостоятельно изучаю <strong>Golang</strong>, <strong>C++</strong> и <strong>PostgreSQL</strong>, что помогает глубже понимать университетскую программу.  </li></ul></div><div style="display:contents" dir="auto"><ul id="2e848c5f-92eb-808d-9d25-f3b3c0148145" class="bulleted-list"><li style="list-style-type:disc">Активно прорабатываю алгоритмы и структуры данных (в т.ч. на LeetCode).  </li></ul></div><div style="display:contents" dir="auto"><ul id="2e848c5f-92eb-80f9-bf2d-eedc44f70a0b" class="bulleted-list"><li style="list-style-type:disc">Работаю в Linux как основной среде разработки.</li></ul></div><div style="display:contents" dir="auto"><hr id="2e848c5f-92eb-804e-a5db-e2c3707fed52"/></div><div style="display:contents" dir="auto"><h3 id="2e848c5f-92eb-80db-8f63-f27a9f3b950b" class="">Языки</h3></div><div style="display:contents" dir="auto"><ul id="2e848c5f-92eb-806a-a035-efa2727f0642" class="bulleted-list"><li style="list-style-type:disc"><strong>Русский</strong> — родной  </li></ul></div><div style="display:contents" dir="auto"><ul id="2e848c5f-92eb-8066-b24e-d8da01c1ac04" class="bulleted-list"><li style="list-style-type:disc"><strong>Английский</strong> — читаю документацию, понимаю технические доклады, могу переписываться по рабочим вопросам</li></ul></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
