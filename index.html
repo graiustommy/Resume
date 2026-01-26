@@ -6,11 +6,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <style>
             :root {
-                --bg-color: #f3f4f6;
+                --bg-color: #f5f5f5;
                 --card-bg: #ffffff;
                 --accent: #0ea5e9;
                 --accent-soft: rgba(14, 165, 233, 0.06);
-                --text-main: #0f172a;
+                --text-main: #111827;
                 --text-muted: #6b7280;
                 --border-subtle: #e5e7eb;
             }
@@ -28,36 +28,22 @@
                     BlinkMacSystemFont,
                     "Segoe UI",
                     sans-serif;
-                background:
-                    radial-gradient(
-                        circle at top left,
-                        #e0f2fe 0,
-                        transparent 45%
-                    ),
-                    radial-gradient(
-                        circle at bottom right,
-                        #fee2e2 0,
-                        transparent 45%
-                    ),
-                    var(--bg-color);
+                background: var(--bg-color);
                 color: var(--text-main);
                 line-height: 1.6;
                 padding: 24px 12px;
             }
 
             .page {
-                max-width: 960px;
+                max-width: 920px;
                 margin: 0 auto;
             }
 
             .card {
                 background: var(--card-bg);
-                border-radius: 20px;
+                border-radius: 12px;
                 border: 1px solid var(--border-subtle);
-                box-shadow:
-                    0 22px 60px rgba(15, 23, 42, 0.1),
-                    0 0 0 1px rgba(255, 255, 255, 0.9);
-                padding: 28px 22px;
+                padding: 24px 18px;
             }
 
             @media (min-width: 768px) {
@@ -65,7 +51,7 @@
                     padding: 40px 16px;
                 }
                 .card {
-                    padding: 36px 32px;
+                    padding: 28px 24px;
                 }
             }
 
@@ -73,12 +59,12 @@
                 display: flex;
                 flex-direction: column;
                 gap: 16px;
-                margin-bottom: 28px;
+                margin-bottom: 24px;
                 border-bottom: 1px solid var(--border-subtle);
-                padding-bottom: 20px;
+                padding-bottom: 16px;
             }
 
-            @media (min-width: 640px) {
+            @media (min-width: 700px) {
                 .header {
                     flex-direction: row;
                     justify-content: space-between;
@@ -93,14 +79,14 @@
             }
 
             .name {
-                font-size: clamp(1.8rem, 2.4vw, 2.2rem);
+                font-size: clamp(1.8rem, 2.3vw, 2.1rem);
                 font-weight: 700;
-                letter-spacing: 0.04em;
+                letter-spacing: 0.03em;
                 color: #020617;
             }
 
             .position {
-                font-size: 0.98rem;
+                font-size: 0.96rem;
                 color: var(--accent);
                 text-transform: uppercase;
                 letter-spacing: 0.16em;
@@ -108,7 +94,7 @@
 
             .tagline {
                 margin-top: 4px;
-                font-size: 0.96rem;
+                font-size: 0.95rem;
                 color: var(--text-muted);
             }
 
@@ -120,7 +106,7 @@
                 color: var(--accent);
                 background: var(--accent-soft);
                 border-radius: 999px;
-                padding: 4px 10px;
+                padding: 3px 9px;
                 border: 1px solid rgba(14, 165, 233, 0.4);
             }
 
@@ -129,21 +115,14 @@
                 height: 6px;
                 border-radius: 999px;
                 background: #22c55e;
-                box-shadow: 0 0 10px rgba(34, 197, 94, 0.8);
             }
 
+            /* Контакты всегда в одну колонку */
             .contact {
                 display: grid;
                 grid-template-columns: 1fr;
-                gap: 6px;
+                row-gap: 8px;
                 font-size: 0.9rem;
-            }
-
-            @media (min-width: 480px) {
-                .contact {
-                    grid-template-columns: repeat(2, minmax(0, 1fr));
-                    column-gap: 18px;
-                }
             }
 
             .contact-item {
@@ -154,7 +133,7 @@
                 color: var(--text-muted);
                 font-size: 0.8rem;
                 text-transform: uppercase;
-                letter-spacing: 0.14em;
+                letter-spacing: 0.12em;
             }
 
             .contact-value a {
@@ -174,43 +153,28 @@
                 gap: 18px;
             }
 
-            @media (min-width: 900px) {
+            @media (min-width: 880px) {
                 .grid {
                     grid-template-columns: 1.1fr 0.9fr;
-                    column-gap: 32px;
+                    column-gap: 28px;
                     align-items: flex-start;
                 }
             }
 
             .section {
-                margin-top: 18px;
+                margin-top: 16px;
             }
 
             .section-title {
                 font-size: 0.9rem;
                 text-transform: uppercase;
                 color: var(--text-muted);
-                letter-spacing: 0.18em;
-                margin-bottom: 10px;
-                display: inline-flex;
-                align-items: center;
-                gap: 8px;
-            }
-
-            .section-title::before {
-                content: "";
-                display: inline-block;
-                width: 24px;
-                height: 1px;
-                background: linear-gradient(
-                    to right,
-                    var(--accent),
-                    transparent
-                );
+                letter-spacing: 0.16em;
+                margin-bottom: 8px;
             }
 
             p {
-                font-size: 0.95rem;
+                font-size: 0.94rem;
                 color: var(--text-main);
                 margin-bottom: 8px;
             }
@@ -228,7 +192,7 @@
 
             .chip {
                 font-size: 0.78rem;
-                padding: 4px 9px;
+                padding: 3px 8px;
                 border-radius: 999px;
                 background: #f9fafb;
                 border: 1px solid #e5e7eb;
@@ -243,11 +207,11 @@
             }
 
             .block {
-                border-radius: 14px;
+                border-radius: 10px;
                 background: #f9fafb;
                 border: 1px solid #e5e7eb;
-                padding: 14px 14px 12px;
-                margin-bottom: 12px;
+                padding: 12px 12px 10px;
+                margin-bottom: 10px;
             }
 
             .block-header {
@@ -259,13 +223,13 @@
             }
 
             .block-title {
-                font-size: 0.98rem;
+                font-size: 0.96rem;
                 font-weight: 600;
                 color: #111827;
             }
 
             .block-subtitle {
-                font-size: 0.85rem;
+                font-size: 0.84rem;
                 color: var(--accent);
             }
 
@@ -282,21 +246,19 @@
 
             .block-body li {
                 position: relative;
-                padding-left: 14px;
+                padding-left: 12px;
                 margin-bottom: 4px;
                 font-size: 0.9rem;
                 color: var(--text-main);
             }
 
             .block-body li::before {
-                content: "";
+                content: "•";
                 position: absolute;
-                left: 4px;
-                top: 0.6em;
-                width: 4px;
-                height: 4px;
-                border-radius: 999px;
-                background: var(--accent);
+                left: 0;
+                top: 0;
+                font-size: 0.9rem;
+                color: var(--accent);
             }
 
             .pill {
@@ -321,13 +283,6 @@
 
             a:hover {
                 color: #0369a1;
-            }
-
-            .footer-note {
-                margin-top: 18px;
-                text-align: right;
-                font-size: 0.78rem;
-                color: var(--text-muted);
             }
         </style>
     </head>
@@ -391,10 +346,9 @@
                                 интегрирующихся с внешними API, решения задач
                                 асинхронного взаимодействия, авторизации и
                                 биллинга. Уверенно владею PostgreSQL и Linux,
-                                активно прокачиваю алгоритмическое мышление
-                                (LeetCode). Особый интерес — event‑driven
-                                архитектуры и системы, основанные на сообщениях
-                                и событиях.
+                                активно прокачиваю алгоритмическое мышление.
+                                Особый интерес — event‑driven архитектуры и
+                                системы, основанные на сообщениях и событиях.
                             </p>
                         </section>
 
@@ -527,45 +481,6 @@
                                 </div>
                             </div>
 
-                            <div class="block">
-                                <div class="block-header">
-                                    <div>
-                                        <div class="block-title">
-                                            Плагин «drugtimer» для GTA:SAMP
-                                        </div>
-                                        <div class="block-subtitle">
-                                            C++ / sampfuncs
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="block-body">
-                                    <ul>
-                                        <li>
-                                            Реализовал C++‑плагин, расширяющий
-                                            функциональность клиента.
-                                        </li>
-                                        <li>
-                                            Работа с хуками, низкоуровневым API
-                                            и управлением памятью.
-                                        </li>
-                                        <li>
-                                            Опыт, полезный для понимания
-                                            производительности и внутреннего
-                                            устройства систем.
-                                        </li>
-                                    </ul>
-                                    <div
-                                        class="chip-row"
-                                        style="margin-top: 4px"
-                                    >
-                                        <span class="chip chip-accent"
-                                            >C++</span
-                                        >
-                                        <span class="chip">sampfuncs</span>
-                                        <span class="chip">Low‑level API</span>
-                                    </div>
-                                </div>
-                            </div>
                         </section>
                     </div>
 
@@ -586,7 +501,6 @@
                                         <span class="chip chip-accent"
                                             >Golang</span
                                         >
-                                        <span class="chip">C++</span>
                                         <span class="chip">PostgreSQL</span>
                                         <span class="chip">REST / HTTP</span>
                                         <span class="chip">JSON</span>
@@ -634,8 +548,8 @@
                                         PostgreSQL, что помогает глубже понимать
                                         университетскую программу. Активно
                                         практикуюсь в алгоритмах и структурах
-                                        данных (в т.ч. на LeetCode), использую
-                                        Linux как основную среду разработки.
+                                        данных, использую Linux как основную
+                                        среду разработки.
                                     </p>
                                 </div>
                             </div>
@@ -663,44 +577,100 @@
                         </section>
 
                         <section class="section">
-                            <h2 class="section-title">
-                                Фокус под вакансию SpectrumData
-                            </h2>
+                            <h2 class="section-title">Pet‑проекты</h2>
+
                             <div class="block">
+                                <div class="block-header">
+                                    <div class="block-title">BookingBot</div>
+                                </div>
                                 <div class="block-body">
-                                    <ul>
-                                        <li>
-                                            Разработка бизнес‑логики на Go и
-                                            построение веб‑сервисов (HTTP/REST).
-                                        </li>
-                                        <li>
-                                            Понимание event‑driven систем,
-                                            очередей задач, обработки событий и
-                                            вебхуков.
-                                        </li>
-                                        <li>
-                                            Уверенная работа с PostgreSQL и
-                                            SQL‑запросами.
-                                        </li>
-                                        <li>
-                                            Интеграция с внешними API (VPN,
-                                            платежи, Telegram, биллинг).
-                                        </li>
-                                        <li>
-                                            Готовность осваивать стек компании:
-                                            брокеры сообщений, gRPC, хранилища
-                                            данных.
-                                        </li>
-                                    </ul>
+                                    <p>
+                                        Telegram‑бот для онлайн‑записи на услуги.
+                                        Clean Architecture: handler → repository → storage.
+                                        Миграции БД, восстановление диалогов после рестарта,
+                                        уведомления администраторам.
+                                    </p>
+                                    <div class="chip-row" style="margin-top: 4px">
+                                        <span class="chip chip-accent">Go</span>
+                                        <span class="chip">PostgreSQL</span>
+                                        <span class="chip">Telegram Bot API</span>
+                                        <span class="chip">Docker</span>
+                                    </div>
                                 </div>
                             </div>
+
+                            <div class="block">
+                                <div class="block-header">
+                                    <div class="block-title">Telegram + Stripe Payments</div>
+                                </div>
+                                <div class="block-body">
+                                    <p>
+                                        Telegram‑бот с интеграцией Stripe Checkout.
+                                        Генерация платёжных ссылок, обработка вебхуков,
+                                        уведомление пользователя об успешной оплате.
+                                    </p>
+                                    <div class="chip-row" style="margin-top: 4px">
+                                        <span class="chip chip-accent">Go</span>
+                                        <span class="chip">Stripe API</span>
+                                        <span class="chip">Webhooks</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="block">
+                                <div class="block-header">
+                                    <div class="block-title">DB Explorer</div>
+                                </div>
+                                <div class="block-body">
+                                    <p>
+                                        Универсальный REST API для динамического доступа
+                                        к MySQL‑базам: листинг таблиц, CRUD‑операции,
+                                        пагинация. Без хардкода структур.
+                                    </p>
+                                    <div class="chip-row" style="margin-top: 4px">
+                                        <span class="chip chip-accent">Go</span>
+                                        <span class="chip">MySQL</span>
+                                        <span class="chip">REST</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="block">
+                                <div class="block-header">
+                                    <div class="block-title">TaskBot</div>
+                                </div>
+                                <div class="block-body">
+                                    <p>
+                                        Telegram‑бот для управления задачами.
+                                        Слоистая архитектура: router → service → repository.
+                                        Учёт задач пользователей.
+                                    </p>
+                                    <div class="chip-row" style="margin-top: 4px">
+                                        <span class="chip chip-accent">Go</span>
+                                        <span class="chip">Telegram Bot API</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="block">
+                                <div class="block-header">
+                                    <div class="block-title">ShopQL</div>
+                                </div>
+                                <div class="block-body">
+                                    <p>
+                                        GraphQL API для интернет‑магазина.
+                                        Поддержка запросов и мутаций, тестовое покрытие.
+                                    </p>
+                                    <div class="chip-row" style="margin-top: 4px">
+                                        <span class="chip chip-accent">Go</span>
+                                        <span class="chip">GraphQL</span>
+                                    </div>
+                                </div>
+                            </div>
+
+
                         </section>
                     </div>
-                </div>
-
-                <div class="footer-note">
-                    Обновлено специально под позицию Go разработчика
-                    (event‑driven / работа с данными).
                 </div>
             </div>
         </div>
