@@ -443,27 +443,32 @@
                                 <div class="block-header">
                                     <div>
                                         <div class="block-title">
-                                            Инструмент парсинга веб‑страниц
+                                            VoteSystem — система онлайн‑голосований
                                         </div>
                                         <div class="block-subtitle">
-                                            Pet‑проект на Golang
+                                            Яндекс Лицей, командный проект
                                         </div>
                                     </div>
                                 </div>
                                 <div class="block-body">
                                     <ul>
                                         <li>
-                                            Консольный инструмент для извлечения
-                                            и агрегации данных с веб‑страниц.
+                                            Микросервисная архитектура: 4 backend‑сервиса + Next.js фронтенд.
                                         </li>
                                         <li>
-                                            Поддержка текстового контента и
-                                            структурированных данных (новости,
-                                            товары, статьи).
+                                            <strong>AuthService</strong> — регистрация, JWT‑авторизация, gRPC‑клиент для межсервисной аутентификации.
                                         </li>
                                         <li>
-                                            Сохранение результатов в JSON и CSV,
-                                            обработка сетевых ошибок.
+                                            <strong>VoteService</strong> — создание опросов с разными типами вопросов (шкала, множественный выбор, открытый ответ).
+                                        </li>
+                                        <li>
+                                            <strong>FeedService</strong> — лента активных опросов, подсчёт и агрегация голосов.
+                                        </li>
+                                        <li>
+                                            <strong>LogService</strong> — централизованное логирование запросов с ротацией файлов.
+                                        </li>
+                                        <li>
+                                            Docker Compose для оркестрации всех сервисов и PostgreSQL.
                                         </li>
                                     </ul>
                                     <div
@@ -473,9 +478,11 @@
                                         <span class="chip chip-accent"
                                             >Golang</span
                                         >
-                                        <span class="chip">HTTP client</span>
-                                        <span class="chip">HTML parsing</span>
-                                        <span class="chip">JSON / CSV</span>
+                                        <span class="chip">Микросервисы</span>
+                                        <span class="chip">gRPC</span>
+                                        <span class="chip">PostgreSQL</span>
+                                        <span class="chip">Docker Compose</span>
+                                        <span class="chip">Next.js</span>
                                     </div>
                                 </div>
                             </div>
@@ -542,14 +549,10 @@
                                     </div>
                                 </div>
                                 <div class="block-body">
-                                    <p>
-                                        Самостоятельно изучаю Golang, C++ и
-                                        PostgreSQL, что помогает глубже понимать
-                                        университетскую программу. Активно
-                                        практикуюсь в алгоритмах и структурах
-                                        данных, использую Linux как основную
-                                        среду разработки.
-                                    </p>
+                                    <ul>
+                                        <li>Изучение алгоритмов, структур данных и системного программирования.</li>
+                                        <li>Практика командной разработки и работы с Git.</li>
+                                    </ul>
                                 </div>
                             </div>
                         </section>
@@ -663,6 +666,24 @@
                                     <div class="chip-row" style="margin-top: 4px">
                                         <span class="chip chip-accent">Go</span>
                                         <span class="chip">GraphQL</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="block">
+                                <div class="block-header">
+                                    <div class="block-title">Web Parser</div>
+                                </div>
+                                <div class="block-body">
+                                    <p>
+                                        Консольный инструмент для парсинга веб‑страниц.
+                                        Извлечение текстового контента и структурированных данных,
+                                        экспорт в JSON/CSV.
+                                    </p>
+                                    <div class="chip-row" style="margin-top: 4px">
+                                        <span class="chip chip-accent">Go</span>
+                                        <span class="chip">HTTP client</span>
+                                        <span class="chip">HTML parsing</span>
                                     </div>
                                 </div>
                             </div>
